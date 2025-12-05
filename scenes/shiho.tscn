@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnnlja84venoh"]
+
+[ext_resource type="Texture2D" uid="uid://bash0c1k400l7" path="res://assets/textures/Player.png" id="1_nx58c"]
+[ext_resource type="Script" uid="uid://dpkd66h6uynrf" path="res://scripts/shiho.gd" id="1_tamiv"]
+[ext_resource type="AudioStream" uid="uid://bytmvpiy24yfi" path="res://assets/sounds/Wolfish.mp3" id="3_7vjd6"]
+
+[node name="Shiho" type="Sprite2D"]
+z_index = -1
+texture = ExtResource("1_nx58c")
+script = ExtResource("1_tamiv")
+
+[node name="Song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7vjd6")
+
+[node name="BeatLabel" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -27.5
+offset_right = 10.5
+offset_bottom = -4.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 2
+horizontal_alignment = 1
+vertical_alignment = 1

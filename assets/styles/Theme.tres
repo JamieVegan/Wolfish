@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bcm4ppy66ca6p"]
+
+[ext_resource type="StyleBox" uid="uid://d0hp60xtusa7y" path="res://assets/styles/button/Focus.tres" id="1_jfpux"]
+[ext_resource type="StyleBox" uid="uid://5fl6l02tf683" path="res://assets/styles/button/Normal.tres" id="2_s0lak"]
+[ext_resource type="FontFile" uid="uid://dwfl51j42t61g" path="res://assets/Silkscreen-Regular.ttf" id="3_eo6ql"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jfpux"]
+color = Color(1, 1, 1, 1)
+grow_begin = 2.0
+grow_end = 2.0
+thickness = 2
+
+[resource]
+default_font = ExtResource("3_eo6ql")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/focus = ExtResource("1_jfpux")
+Button/styles/hover = ExtResource("2_s0lak")
+Button/styles/normal = ExtResource("2_s0lak")
+Button/styles/pressed = ExtResource("2_s0lak")
+HSeparator/styles/separator = SubResource("StyleBoxLine_jfpux")
+RichTextLabel/font_sizes/normal_font_size = 8

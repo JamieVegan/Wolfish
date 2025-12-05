@@ -1,0 +1,677 @@
+[gd_scene load_steps=13 format=3 uid="uid://bm6axqguxeijp"]
+
+[ext_resource type="Theme" uid="uid://bcm4ppy66ca6p" path="res://assets/styles/Theme.tres" id="1_8ho6b"]
+[ext_resource type="Texture2D" uid="uid://c5vay0taxrqs6" path="res://assets/textures/Snowball.png" id="1_c13y7"]
+[ext_resource type="Texture2D" uid="uid://bash0c1k400l7" path="res://assets/textures/Player.png" id="2_8ho6b"]
+[ext_resource type="Script" uid="uid://c6cfalid4figr" path="res://scripts/tutorial.gd" id="2_cq4me"]
+[ext_resource type="Texture2D" uid="uid://dtoxtrttpo727" path="res://assets/textures/PlayerHitbox.png" id="3_ph3nu"]
+[ext_resource type="Texture2D" uid="uid://da7x4v0h3id1b" path="res://assets/textures/Noball.png" id="6_6yjpi"]
+[ext_resource type="Texture2D" uid="uid://drjdh2m42ugvp" path="res://assets/textures/Light.png" id="7_gbqnl"]
+
+[sub_resource type="Animation" id="Animation_6yjpi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Margin/VBox/TextureRect6/Snowball:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Margin/VBox/TextureRect6/Hitbox:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Margin/VBox/TextureRect6/Deathbomb:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Margin/VBox/TextureRect7/Snowball:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(112, -4)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Margin/VBox/TextureRect7/Hitbox:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gbqnl"]
+resource_name = "death"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Margin/VBox/TextureRect6/Snowball:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(116, -4), Vector2(142, 22), Vector2(142, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Margin/VBox/TextureRect6/Hitbox:modulate")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0.5, 0.5, 0.5, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Margin/VBox/TextureRect6/Deathbomb:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_nlqja"]
+resource_name = "death_parry"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Margin/VBox/TextureRect8aaa/Snowball:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(116, -4), Vector2(142, 22), Vector2(142, 22), Vector2(176, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Margin/VBox/TextureRect8aaa/Hitbox:modulate")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0.75, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Margin/VBox/TextureRect8aaa/Deathbomb:visible")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ckvwl"]
+resource_name = "parry"
+length = 2.0
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Margin/VBox/TextureRect7/Snowball:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(116, -4), Vector2(142, 22), Vector2(176, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Margin/VBox/TextureRect7/Hitbox:modulate")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(0.75, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gbqnl"]
+_data = {
+&"RESET": SubResource("Animation_6yjpi"),
+&"death": SubResource("Animation_gbqnl"),
+&"death_parry": SubResource("Animation_nlqja"),
+&"parry": SubResource("Animation_ckvwl")
+}
+
+[node name="Tutorial" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8ho6b")
+script = ExtResource("2_cq4me")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25, 0.25, 0.25, 1)
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Margin" type="MarginContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Scroll/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Welcome to wolfish!"
+horizontal_alignment = 1
+
+[node name="Label14" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Press [color=#00ffff][Escape][/color] to return"
+fit_content = true
+
+[node name="Label23" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#00ffff][Scroll wheel][/color], [color=#00ffff][WASD][/color] or [color=#00ffff][Arrow keys][/color] to scroll"
+fit_content = true
+
+[node name="HSeparator8" type="HSeparator" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+
+[node name="Label22" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "This is the [color=#00ff00]player[/color]"
+fit_content = true
+
+[node name="TextureRect" type="TextureRect" parent="Scroll/Margin/VBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture = ExtResource("2_8ho6b")
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Scroll/Margin/VBox/TextureRect"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ph3nu")
+stretch_mode = 5
+
+[node name="HSeparator4" type="HSeparator" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+
+[node name="Label2" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "If any bullet hits the red box, [color=#ff0000]you die! (only 1 life)[/color]"
+fit_content = true
+
+[node name="TextureRect6" type="TextureRect" parent="Scroll/Margin/VBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture = ExtResource("2_8ho6b")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scroll/Margin/VBox/TextureRect6"]
+root_node = NodePath("../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_gbqnl")
+}
+autoplay = "death"
+
+[node name="Hitbox" type="TextureRect" parent="Scroll/Margin/VBox/TextureRect6"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ph3nu")
+stretch_mode = 5
+
+[node name="Snowball" type="TextureRect" parent="Scroll/Margin/VBox/TextureRect6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -36.0
+offset_right = -31.999298
+offset_bottom = -27.999947
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c13y7")
+stretch_mode = 5
+
+[node name="Deathbomb" type="Label" parent="Scroll/Margin/VBox/TextureRect6"]
+visible = false
+z_index = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -21.0
+offset_right = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_8ho6b")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+text = "Parry!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "You can move with [color=#00ffff][WASD][/color] or [color=#00ffff][Arrow keys][/color]"
+fit_content = true
+
+[node name="Label8" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "You can hold [color=#00ffff][shift][/color] to move slower (aka [color=#00ff00]Focus[/color])
+this is very important to use when you want to move by small amounts"
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Scroll/Margin/VBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("1_c13y7")
+stretch_mode = 5
+
+[node name="Label3" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "This is a [color=#00ff00]bullet[/color]"
+fit_content = true
+
+[node name="Label4" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Bullets can be parried with [color=#00ffff][Z, X, Space, Enter][/color]"
+fit_content = true
+
+[node name="Label7" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#00ff00]Parrying[/color] lasts for [color=#00ff00]0.25 seconds[/color] and has a cooldown (based on difficulty)"
+fit_content = true
+
+[node name="Label6" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#00ff00]Parrying[/color] looks like this"
+fit_content = true
+
+[node name="TextureRect7" type="TextureRect" parent="Scroll/Margin/VBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture = ExtResource("2_8ho6b")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scroll/Margin/VBox/TextureRect7"]
+root_node = NodePath("../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_gbqnl")
+}
+autoplay = "parry"
+
+[node name="Hitbox" type="TextureRect" parent="Scroll/Margin/VBox/TextureRect7"]
+modulate = Color(0, 0, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ph3nu")
+stretch_mode = 5
+
+[node name="Snowball" type="TextureRect" parent="Scroll/Margin/VBox/TextureRect7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -36.0
+offset_right = -31.995117
+offset_bottom = -27.999653
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c13y7")
+stretch_mode = 5
+
+[node name="Deathbomb" type="Label" parent="Scroll/Margin/VBox/TextureRect7"]
+visible = false
+z_index = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -21.0
+offset_right = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_8ho6b")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+text = "Parry!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+
+[node name="Label9" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "You can [color=#00ff00]Death Parry[/color] after getting hit by a bullet if you press [color=#00ffff]Parry[/color] quick enough after being hit (length is based on difficulty)"
+fit_content = true
+
+[node name="Label13" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#00ff00]Death parrying[/color] looks like this"
+fit_content = true
+
+[node name="TextureRect8aaa" type="TextureRect" parent="Scroll/Margin/VBox"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+texture = ExtResource("2_8ho6b")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scroll/Margin/VBox/TextureRect8aaa"]
+root_node = NodePath("../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_gbqnl")
+}
+autoplay = "death_parry"
+
+[node name="Hitbox" type="TextureRect" parent="Scroll/Margin/VBox/TextureRect8aaa"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ph3nu")
+stretch_mode = 5
+
+[node name="Snowball" type="TextureRect" parent="Scroll/Margin/VBox/TextureRect8aaa"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = -1.9938965
+offset_bottom = -2.0003357
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c13y7")
+stretch_mode = 5
+
+[node name="Deathbomb" type="Label" parent="Scroll/Margin/VBox/TextureRect8aaa"]
+z_index = 1
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -21.0
+offset_right = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_8ho6b")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 16
+text = "Parry!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Scroll/Margin/VBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("6_6yjpi")
+stretch_mode = 5
+
+[node name="Label10" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#ff0000]Red[/color] bullets [color=#ff0000]cannot[/color] be parried"
+fit_content = true
+
+[node name="HSeparator3" type="HSeparator" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="Scroll/Margin/VBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+texture = ExtResource("7_gbqnl")
+stretch_mode = 5
+
+[node name="Label11" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#00ff00]Green[/color] bullets give you your [color=#00ff00]Parry[/color] back when they are parried, bypassing the cooldown"
+fit_content = true
+
+[node name="Label12" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Additionally, you can [color=#00ff00]Death Parry[/color] on [color=#00ff00]Green[/color] bullets even if your parry is on cooldown"
+fit_content = true
+
+[node name="HSeparator6" type="HSeparator" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+
+[node name="Label15" type="Label" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Additional notes"
+horizontal_alignment = 1
+
+[node name="Label19" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "You cannot [color=#00ff00]parry[/color] on [color=#00ff00]lunatic[/color] difficulty"
+fit_content = true
+
+[node name="Label24" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "It's okay if you can't beat [color=#00ff00]hard[/color] or [color=#00ff00]lunatic[/color] if you've never played a bullet hell before, I'm not the best at balancing difficulties anyways"
+fit_content = true
+
+[node name="Label20" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Do not neglect [color=#00ff00]parrying[/color]! learn how it works. use it on [color=#00ff00]green[/color] bullets!"
+fit_content = true
+
+[node name="Label16" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Your hitbox is [color=#bf0000]darker[/color] when your [color=#00ff00]Parry[/color] is on cooldown"
+fit_content = true
+
+[node name="Label21" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "The source code for the game is available in the [color=#00ff00]src[/color] folder and at [color=#00ffff]github.com/jamievegan/wolfish[/color]. Enjoy making fun of my code :)"
+fit_content = true
+
+[node name="HSeparator7" type="HSeparator" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+
+[node name="Label17" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#00ff00]First pattern[/color]: try slowly tapping left or right. let the bullets barely miss you"
+fit_content = true
+
+[node name="Label18" type="RichTextLabel" parent="Scroll/Margin/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "[color=#00ff00]Second pattern[/color]: try holding [color=#00ffff][shift][/color] to move slower"
+fit_content = true

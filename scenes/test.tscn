@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://d21cplfoloeho"]
+
+[ext_resource type="Theme" uid="uid://bcm4ppy66ca6p" path="res://assets/styles/Theme.tres" id="1_bl13t"]
+[ext_resource type="Script" uid="uid://byqnqohep3h17" path="res://scripts/test.gd" id="1_errlg"]
+
+[node name="Test" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_bl13t")
+script = ExtResource("1_errlg")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+
+[node name="0" type="Button" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="32" type="Button" parent="Center/VBox"]
+layout_mode = 2
+text = "32"
+
+[node name="112" type="Button" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "112"
+
+[node name="128" type="Button" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "128"
+
+[node name="160" type="Button" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "160"
+
+[node name="176" type="Button" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "176"
+
+[node name="216" type="Button" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "216"
+
+[node name="246" type="Button" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "246"
+
+[node name="312" type="Button" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "312"
+
+[node name="344" type="Button" parent="Center/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "344"
+
+[connection signal="pressed" from="Center/VBox/0" to="." method="_on_0_pressed"]
+[connection signal="pressed" from="Center/VBox/32" to="." method="_on_32_pressed"]
+[connection signal="pressed" from="Center/VBox/112" to="." method="_on_112_pressed"]
+[connection signal="pressed" from="Center/VBox/128" to="." method="_on_128_pressed"]
+[connection signal="pressed" from="Center/VBox/160" to="." method="_on_160_pressed"]
+[connection signal="pressed" from="Center/VBox/176" to="." method="_on_176_pressed"]
+[connection signal="pressed" from="Center/VBox/216" to="." method="_on_216_pressed"]
+[connection signal="pressed" from="Center/VBox/246" to="." method="_on_246_pressed"]
+[connection signal="pressed" from="Center/VBox/312" to="." method="_on_312_pressed"]
+[connection signal="pressed" from="Center/VBox/344" to="." method="_on_344_pressed"]
